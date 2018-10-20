@@ -8,11 +8,17 @@ import axios from "axios";
 
 class MailTemplatesPage extends React.Component {
 
+    checkBlank = (data) => {
+        return (data.length === 0 || !data.trim());
+    };
+
     handleSubmit = () => {
-        axios.post('https://fuhrparkapi.zz-dev.de/bla/blub',
+        axios.post('https://fuhrparkapi.zz-dev.de/admin/template/',
             {
                 templateName: this.state.templateName,
-                templateContent: this.state.templateContent
+                htmlTemplate: this.checkBlank(this.state.htmlTemplate) ? null : this.state.htmlTemplate,
+                plainTemplate: this.state.plainTemplate,
+                subjectTemplate: this.state.subjectTemplate,
             },
             {
                 headers: {'Authorization': 'Bearer ' + this.state.token}
@@ -33,7 +39,7 @@ class MailTemplatesPage extends React.Component {
         this.state = {
             templateName: "",
             templateContent: "",
-            token: ""
+            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDAwOTM3ODMsInVzZXJfbmFtZSI6InNlZGlyIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9DT01QQU5ZX0FETUlOIiwiUk9MRV9BRE1JTiJdLCJqdGkiOiJjZDg1OGFiMS1jNmNiLTRhYTQtOGRmNC04MTkyZDM1MTRlYWYiLCJjbGllbnRfaWQiOiJmdWhycGFyay5pbyIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSIsInRydXN0Il19.SMmPw2jlvfoVG_Vhb9CPyJi_IerfKOKD6XmeA92-KW8"
         }
     }
 
@@ -51,14 +57,35 @@ class MailTemplatesPage extends React.Component {
                 <div style={{display: 'flex', flexDirection: 'row'}}>
 
                     <p>Template Name</p>
-                    <TextField onChange={this.handleChange('templateName')}/>
+                    <TextField
+                        onChange={this.handleChange('templateName')}/>
 
                 </div>
 
                 <div style={{display: 'flex', flexDirection: 'row'}}>
 
-                    <p>Template Content</p>
-                    <TextField onChange={this.handleChange('templateContent')}/>
+                    <p>htmlTemplate</p>
+                    <TextField
+                        multiline={true}
+                        onChange={this.handleChange('htmlTemplate')}/>
+
+                </div>
+
+                <div style={{display: 'flex', flexDirection: 'row'}}>
+
+                    <p>plainTemplate</p>
+                    <TextField
+                        multiline={true}
+                        onChange={this.handleChange('plainTemplate')}/>
+
+                </div>
+
+                <div style={{display: 'flex', flexDirection: 'row'}}>
+
+                    <p>subjectTemplate</p>
+                    <TextField
+                        multiline={true}
+                        onChange={this.handleChange('subjectTemplate')}/>
 
                 </div>
 

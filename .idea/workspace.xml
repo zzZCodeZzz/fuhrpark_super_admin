@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="bfbb392d-a5ba-4852-937d-3c184eaf5fde" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/src/CarBrands.js" afterPath="$PROJECT_DIR$/src/CarBrands.js" />
       <change beforePath="$PROJECT_DIR$/src/MailTemplatesPage.js" afterPath="$PROJECT_DIR$/src/MailTemplatesPage.js" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" afterPath="$PROJECT_DIR$/yarn.lock" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,14 +19,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.526621">
+    <splitter split-orientation="horizontal" split-proportion="0.61360043">
       <split-first>
         <leaf>
           <file leaf-file-name="MailTemplatesPage.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/MailTemplatesPage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+                <state relative-caret-position="424">
+                  <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -38,8 +41,8 @@
           <file leaf-file-name="CarBrands.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/CarBrands.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+                <state relative-caret-position="338">
+                  <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="357" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -168,7 +171,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1539983872709</updated>
-      <workItem from="1539983873860" duration="18831000" />
+      <workItem from="1539983873860" duration="22689000" />
     </task>
     <task id="LOCAL-00001" summary="stuff">
       <created>1540005966260</created>
@@ -177,11 +180,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540005966260</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="stuff">
+      <created>1540006327057</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1540006327057</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18831000" />
+    <option name="totallyTimeSpent" value="22689000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="31" width="1920" height="1169" extended-state="6" />
@@ -307,16 +317,16 @@
         <state relative-caret-position="360">
           <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#354#406#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
+            <element signature="e#354#406#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CarBrands.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        <state relative-caret-position="338">
+          <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="357" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -325,8 +335,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MailTemplatesPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="424">
+          <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
