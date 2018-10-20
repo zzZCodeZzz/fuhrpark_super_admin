@@ -1,28 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {Route} from "react-router-dom";
+import CssBaseline from "@material-ui/core/CssBaseline/CssBaseline";
+import {createMuiTheme} from '@material-ui/core/styles';
+import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+import HomePage from "./HomePage";
+// import PermanentDrawer from "./PermanentDrawer"
+import MailTemplatesPage from "./MailTemplatesPage";
+import CarBrands from "./CarBrands";
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {main: '#039be5'},
+        secondary: {main: '#0091ea'},
+    },
+});
+
+const App = () => (
+    <MuiThemeProvider theme={theme}>
+        <React.Fragment>
+            <CssBaseline />
+            <Route path="/" exact component={HomePage}/>
+            <Route path="/mailTemplates" exact component={MailTemplatesPage}/>
+            <Route path="/carBrands" exact component={CarBrands}/>
+        </React.Fragment>
+    </MuiThemeProvider>
+);
 
 export default App;
