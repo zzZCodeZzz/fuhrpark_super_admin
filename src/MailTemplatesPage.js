@@ -15,7 +15,7 @@ class MailTemplatesPage extends React.Component {
                 templateContent: this.state.templateContent
             },
             {
-                //authConfig
+                headers: {'Authorization': 'Bearer ' + this.state.token}
             }
         ).then(
             resp => {
@@ -32,7 +32,8 @@ class MailTemplatesPage extends React.Component {
         super();
         this.state = {
             templateName: "",
-            templateContent: ""
+            templateContent: "",
+            token: ""
         }
     }
 
@@ -64,6 +65,9 @@ class MailTemplatesPage extends React.Component {
                 <Button variant="contained" color="primary" onClick={this.handleSubmit}>
                     Sumbit
                 </Button>
+
+                token
+                <TextField onChange={this.handleChange('token')}/>
 
             </div>
         )

@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfbb392d-a5ba-4852-937d-3c184eaf5fde" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/CarBrands.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/HomePage.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/MailTemplatesPage.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/PermanentDrawer.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/history.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/reducers/rootReducer.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/registerServiceWorker.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/tileData.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" afterPath="$PROJECT_DIR$/yarn.lock" />
+      <change beforePath="$PROJECT_DIR$/src/MailTemplatesPage.js" afterPath="$PROJECT_DIR$/src/MailTemplatesPage.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,14 +16,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4053769">
+    <splitter split-orientation="horizontal" split-proportion="0.526621">
       <split-first>
         <leaf>
           <file leaf-file-name="MailTemplatesPage.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/MailTemplatesPage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="42" column="6" lean-forward="true" selection-start-line="38" selection-start-column="3" selection-end-line="42" selection-end-column="6" />
+                <state relative-caret-position="300">
+                  <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -82,8 +70,8 @@
         <option value="$PROJECT_DIR$/src/PermanentDrawer.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/HomePage.js" />
-        <option value="$PROJECT_DIR$/src/MailTemplatesPage.js" />
         <option value="$PROJECT_DIR$/src/CarBrands.js" />
+        <option value="$PROJECT_DIR$/src/MailTemplatesPage.js" />
       </list>
     </option>
   </component>
@@ -180,12 +168,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1539983872709</updated>
-      <workItem from="1539983873860" duration="18466000" />
+      <workItem from="1539983873860" duration="18831000" />
     </task>
+    <task id="LOCAL-00001" summary="stuff">
+      <created>1540005966260</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1540005966260</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18466000" />
+    <option name="totallyTimeSpent" value="18831000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="31" width="1920" height="1169" extended-state="6" />
@@ -216,6 +212,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -313,20 +313,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MailTemplatesPage.js">
+    <entry file="file://$PROJECT_DIR$/src/CarBrands.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="42" column="6" lean-forward="true" selection-start-line="38" selection-start-column="3" selection-end-line="42" selection-end-column="6" />
+        <state relative-caret-position="420">
+          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CarBrands.js">
+    <entry file="file://$PROJECT_DIR$/src/MailTemplatesPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        <state relative-caret-position="300">
+          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
