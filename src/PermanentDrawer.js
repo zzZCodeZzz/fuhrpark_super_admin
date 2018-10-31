@@ -14,7 +14,7 @@ import {Route} from "react-router-dom";
 import { mailFolderListItems } from './tileData';
 
 import MailTemplatesPage from "./MailTemplatesPage";
-import CarBrands from "./CarBrands"
+import CarBrandEditor from "./CarBrandEditor"
 
 const drawerWidth = 240;
 
@@ -92,7 +92,7 @@ class PermanentDrawer extends React.Component {
                     <main className={classes.content}>
                         <div className={classes.toolbar} />
                         <Route path={`${match.path}/mailTemplates`} component={MailTemplatesPage} />
-                        <Route path={`${match.path}/carBrands`} component={CarBrands} />
+                        <Route path={`${match.path}/carBrands`} component={CarBrandEditor} />
 
                     </main>
 

@@ -6,8 +6,9 @@ import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 
 import HomePage from "./HomePage";
 // import PermanentDrawer from "./PermanentDrawer"
-import MailTemplatesPage from "./MailTemplatesPage";
-import CarBrands from "./CarBrands";
+import AppPage from "./AppPage";
+import LoginPage from './LoginPage';
+import {restSession} from "./rest/RestSession";
 
 const theme = createMuiTheme({
     palette: {
@@ -20,9 +21,9 @@ const App = () => (
     <MuiThemeProvider theme={theme}>
         <React.Fragment>
             <CssBaseline />
-            <Route path="/" exact component={HomePage}/>
-            <Route path="/mailTemplates" exact component={MailTemplatesPage}/>
-            <Route path="/carBrands" exact component={CarBrands}/>
+            <Route path="/login" component={LoginPage}/>
+            <Route path="/app" exact component={AppPage} />
+            <Route path="/app" component={AppPage} />
         </React.Fragment>
     </MuiThemeProvider>
 );
