@@ -5,7 +5,7 @@ import {withStyles} from "@material-ui/core";
 import {overviewStyles} from "./helpers/styleHelper";
 import CollapsableTemplatePane from "./CollapsableTemplatePane";
 import PreviewableTemplate from "./PreviewableTemplate";
-import NotificationSettingService from "./rest/NotificationSettingService";
+import NotificationSettingService from "fuhrparkjsrest/service/admin/NotificationSettingService";
 import SaveIcon from '@material-ui/icons/Save';
 import IconButton from '@material-ui/core/IconButton';
 import {connect} from "react-redux";
@@ -43,7 +43,7 @@ class NotificationSettingEditor extends Component {
         const setMailPlainTemplate=text=>this.setState({mailTemplate:Object.assign({},mailTemplate,{plainTemplate: text})});
         const setMailHtmlTemplate=text=>this.setState({mailTemplate:Object.assign({},mailTemplate,{htmlTemplate: text})});
 
-        const fetchPreview=(id,previewText)=>(new NotificationSettingService().previewTemplate(notificationTypeSetting.typeIdentifier,previewText)
+        const fetchPreview=(id,previewText)=>(NotificationSettingService.previewTemplate(notificationTypeSetting.typeIdentifier,previewText)
             .then(preview=>{
                 let mod={};
                 mod[id]=preview;

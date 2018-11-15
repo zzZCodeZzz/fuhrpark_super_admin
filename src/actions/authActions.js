@@ -1,9 +1,10 @@
 /* eslint-disable import/named */
 import * as types from "./actionTypes";
-import apiCalls from "../rest/ApiCalls";
+import apiCalls from "../rest2/ApiCalls";
 import history from "../history";
-import {OAuth2Data} from "../rest/RestClient";
-import RestSession from "../rest/RestSession";
+import {OAuth2Data} from "../rest2/RestClient";
+import RestSession from "../rest2/RestSession";
+import {Session} from "fuhrparkjsrest/rest/RestSession";
 
 
 export const token2Store = (data) => ({
@@ -16,7 +17,8 @@ export const logout = () => ({
 });
 
 export const loginACTION = credentials => dispatch =>
-	apiCalls.auth.login(credentials).then(data => {
+	Session.login(credentials.username,credentials.password).then(data=>{dispatch(token2Store(data))});
+	/*apiCalls.auth.login(credentials).then(data => {
 
 		//setAuthHeader(data.access_token);
 		RestSession.instance.accessToken(data.access_token);
@@ -25,24 +27,17 @@ export const loginACTION = credentials => dispatch =>
 
 		dispatch(token2Store(data));
 		//dispatch(userInitACTION(data));
-	});
+	});*/
 
-export const refreshTokenACTION = () => (dispatch, store) =>
-	apiCalls.auth.refresh(store.getState().authReducer.refresh_token).then(token => {
-
-		OAuth2Data.setToken(token.access_token);
-		dispatch(token2Store(token));
-		localStorage.fuhrparkToken = JSON.stringify(token);
-
-		return token;
-	});
 
 
 export const logoutACTION = () => dispatch => {
-
+	Session.logout();
+/*
 	localStorage.removeItem("fuhrparkToken");
 	OAuth2Data.setToken(null);
 	history.push("/login");
+*/
 
 	// Todo empty all reducers
 	dispatch(logout());

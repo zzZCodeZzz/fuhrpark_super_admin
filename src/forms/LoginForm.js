@@ -56,7 +56,7 @@ class LoginForm extends React.Component {
                 	console.log("lll");
                 	history.push("/app");
 				})
-				.catch(err => {
+				.catch(err => { console.log(err);
 				this.setState({errors: err.response, loading: false});
 			});
 		}
@@ -74,7 +74,9 @@ class LoginForm extends React.Component {
 	};
 
 	render() {
+
 		const {data, errors} = this.state;
+
 		const {classes} = this.props;
 		return (
 			<form className={classes.form}>

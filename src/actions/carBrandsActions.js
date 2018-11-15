@@ -1,6 +1,6 @@
 import {createAction} from "redux-actions";
 import * as types from './actionTypes';
-import CarBrandService from '../rest/CarBrandService';
+import CarbrandService from "fuhrparkjsrest/service/admin/CarbrandService";
 
 export const setCarBrandEditorInput=createAction(types.CARBRAND_SET_EDITORINPUT);
 export const setCarBrands = createAction(types.CARBRAND_SET_CARBRANDS);
@@ -8,11 +8,12 @@ export const setCarBrand = createAction(types.CARBRAND_SET_CARBRAND);
 export const removeCarBrand = createAction(types.CARBRAND_REMOVE_CARBRAND);
 
 export const requestCarBrands = () => dispatch => {
-    new CarBrandService().list().then(data => dispatch(setCarBrands(data)));
+    CarbrandService.list().then(d=>dispatch(setCarBrands(d)));
+    //new CarBrandService().list().then(data => dispatch(setCarBrands(data)));
 };
 
 export const deleteCarBrand = (carBrandId, callback) => dispatch => {
-    new CarBrandService().deleteBrand(carBrandId)
+    CarbrandService.delete(carBrandId)
         .then(() => {
             dispatch(removeCarBrand(carBrandId));
             if (callback !== undefined) {
@@ -22,11 +23,10 @@ export const deleteCarBrand = (carBrandId, callback) => dispatch => {
 };
 
 export const updateCarBrand = (carBrandId,newFullBrandName) => dispatch => {
-    new CarBrandService().updateBrand(carBrandId,newFullBrandName)
-        .then((data) =>dispatch(setCarBrand(data)));
+    CarbrandService.update(carBrandId,{fullBrandName:newFullBrandName}).then((data) =>dispatch(setCarBrand(data)));
 };
 
 export const insertCarBrand = (carBrandId,newFullBrandName) => dispatch => {
-    new CarBrandService().insertBrand(carBrandId,newFullBrandName)
+    CarbrandService().create({brandCode:carBrandId,fullBrandName:newFullBrandName})
         .then((data) =>dispatch(setCarBrand(data)));
 };

@@ -12,7 +12,12 @@ import {Provider} from "react-redux";
 import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import history from "./history";
-import RestSession from "./rest/RestSession";
+import RestSession from "./rest2/RestSession";
+import {RestSessionBuilder, Session} from "fuhrparkjsrest/rest/RestSession";
+import {LocalStorageTokenStore} from "fuhrparkjsrest/rest/TokenStore";
+import AuthAPI from "fuhrparkjsrest/rest/AuthAPI";
+import RestConfig from "./rest2/RestConfig";
+
 
 function render(store) {
     ReactDOM.render(
@@ -27,13 +32,21 @@ function render(store) {
 const store=configureStore();
 //const store = createStore(rootReducer, {}, composeWithDevTools(applyMiddleware(thunk)));
 
-let accessTokenStorage = localStorage.getItem("accessToken");
-let refreshTokenStorage = localStorage.getItem("refreshToken");
-RestSession.instance=new RestSession().
-                    noAuth(()=>history.push("/login")).
-                    accessToken(accessTokenStorage?JSON.parse(accessTokenStorage):null).refreshToken(refreshTokenStorage?JSON.parse(refreshTokenStorage):null).
-                    persistToken((access,refresh)=>{localStorage.setItem("accessToken",JSON.stringify(access));localStorage.setItem("refreshToken",JSON.stringify(refresh));});
+// let accessTokenStorage = localStorage.getItem("accessToken");
+// let refreshTokenStorage = localStorage.getItem("refreshToken");
+// RestSession.instance=new RestSession().
+//                     noAuth(()=>history.push("/login")).
+//                     accessToken(accessTokenStorage?JSON.parse(accessTokenStorage):null).refreshToken(refreshTokenStorage?JSON.parse(refreshTokenStorage):null).
+//                     persistToken((access,refresh)=>{localStorage.setItem("accessToken",JSON.stringify(access));localStorage.setItem("refreshToken",JSON.stringify(refresh));});
 
+new RestSessionBuilder(RestConfig.baseUrl)
+    .authApi(new AuthAPI(RestConfig.baseUrl,{username:RestConfig.authUsername,password:RestConfig.authPassword}))
+    .tokenStore(new LocalStorageTokenStore("fuhrpark-tokens"))
+    .onUnauthorized(()=>history.push("/login"))
+    .onLogout(()=>history.push("/login"))
+    .build();
+
+Session.login("manu","bla").then(res=>{console.log(res)}).catch(err=>{console.log(err)});
 
 function init() {
     render(store);

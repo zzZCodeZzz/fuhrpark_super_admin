@@ -17,6 +17,7 @@ export class RestClient {
     }
 
     data(data) {
+        console.log(typeof data);
         this.dataObj=data;
         return this;
     }

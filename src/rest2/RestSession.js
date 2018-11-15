@@ -82,7 +82,7 @@ export default class RestSession {
         if (typeof callback==="function") {
             this.unauthorizedFailedCallback=callback;
         } else {
-            console.log("Tried to set non-function unauthorized callback");
+            console.log("Tried to set non-function handleUnauthorized callback");
         }
         return this;
     }

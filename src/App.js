@@ -8,7 +8,7 @@ import HomePage from "./HomePage";
 // import PermanentDrawer from "./PermanentDrawer"
 import AppPage from "./AppPage";
 import LoginPage from './LoginPage';
-import {restSession} from "./rest/RestSession";
+import {restSession} from "./rest2/RestSession";
 
 const theme = createMuiTheme({
     palette: {
