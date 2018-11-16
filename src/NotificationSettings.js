@@ -38,7 +38,7 @@ class NotificationSettings extends Component {
         const mainComponent=
                 routeProps => (state.editing===null?
                                 (<NotificationSettingList {...routeProps} notificationSettings={notificationSettings} editSettings={editNotificationSetting} classes={classes} />):
-                                (<NotificationSettingEditor notificationTypeSetting={getNotificationSetting(notificationSettings,state.editing)}/>));
+                                (<NotificationSettingEditor closeEditor={()=>this.setState({editing:null})} notificationTypeSetting={getNotificationSetting(notificationSettings,state.editing)}/>));
         return (<div>
                 <Route exact path={match.path}
                        render={mainComponent}

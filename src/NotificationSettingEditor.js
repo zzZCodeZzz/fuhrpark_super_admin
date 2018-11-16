@@ -6,6 +6,7 @@ import {overviewStyles} from "./helpers/styleHelper";
 import CollapsableTemplatePane from "./CollapsableTemplatePane";
 import PreviewableTemplate from "./PreviewableTemplate";
 import NotificationSettingService from "fuhrparkjsrest/service/admin/NotificationSettingService";
+import ExitEditorIcon from '@material-ui/icons/ExitToApp';
 import SaveIcon from '@material-ui/icons/Save';
 import IconButton from '@material-ui/core/IconButton';
 import {connect} from "react-redux";
@@ -25,16 +26,22 @@ class NotificationSettingEditor extends Component {
     constructor(props, context) {
         super(props, context);
         this.state=defaultState;
-        let notificationSetting = props.notificationTypeSetting.notificationSetting;
+    }
+
+
+    componentDidMount() {
+        let notificationSetting = this.props.notificationTypeSetting.notificationSetting;
+        let newState=Object.assign({},defaultState);
         if (notificationSetting!==null) {
-            this.state.appNotificationTemplate=Object.assign({},defaultState.appNotificationTemplate,notificationSetting.appNotificationTemplate);
-            this.state.mailTemplate=Object.assign({},defaultState.mailTemplate,notificationSetting.mailTemplate);
+            newState.appNotificationTemplate=Object.assign({},notificationSetting.appNotificationTemplate);
+            newState.mailTemplate=Object.assign({},notificationSetting.mailTemplate);
         }
+        this.setState(newState);
     }
 
     render() {
         const {appNotificationTemplate,mailTemplate,previews}=this.state;
-        const {saveNotificationSettings,classes,notificationTypeSetting}=this.props;
+        const {saveNotificationSettings,classes,notificationTypeSetting,closeEditor}=this.props;
         const setAppNotificationsActivation=activation=>this.setState({appNotificationTemplate:Object.assign({},appNotificationTemplate,{sendAppNotification: activation})});
         const setAppNotificationTemplate=text=>this.setState({appNotificationTemplate:Object.assign({},appNotificationTemplate,{notificationTemplate: text})});
 
@@ -43,7 +50,7 @@ class NotificationSettingEditor extends Component {
         const setMailPlainTemplate=text=>this.setState({mailTemplate:Object.assign({},mailTemplate,{plainTemplate: text})});
         const setMailHtmlTemplate=text=>this.setState({mailTemplate:Object.assign({},mailTemplate,{htmlTemplate: text})});
 
-        const fetchPreview=(id,previewText)=>(NotificationSettingService.previewTemplate(notificationTypeSetting.typeIdentifier,previewText)
+        const fetchPreview=(id,previewText)=>(new NotificationSettingService().previewTemplate(notificationTypeSetting.typeIdentifier,previewText)
             .then(preview=>{
                 let mod={};
                 mod[id]=preview;
@@ -59,7 +66,10 @@ class NotificationSettingEditor extends Component {
         return (
             <div>
                 <Typography variant="headline" className={classes.headline}>Notification Setting for {notificationTypeSetting.notificationName}</Typography>
-                <IconButton onClick={save}><SaveIcon/></IconButton>
+                <div style={{width:"100%",display:"inline-block"}}>
+                    <IconButton onClick={closeEditor}  style={{float:"right"}}><ExitEditorIcon/></IconButton>
+                    <IconButton onClick={save}  style={{float:"right"}}><SaveIcon/></IconButton>
+                </div>
                 <CollapsableTemplatePane name="App Notifications" activated={appNotificationTemplate.sendAppNotification} setActivation={setAppNotificationsActivation}>
                     <PreviewableTemplate preview={previews.app} previewAction={fetchPreview} id="app" name="Notification Template" multiline={false} currentText={appNotificationTemplate.notificationTemplate} setText={setAppNotificationTemplate}/>
                 </CollapsableTemplatePane>
@@ -67,7 +77,11 @@ class NotificationSettingEditor extends Component {
                 <br/>
                 <CollapsableTemplatePane name="Mail Template" activated={mailTemplate.sendMail} setActivation={setMailActivation}>
                     <PreviewableTemplate preview={previews.mailSubject} previewAction={fetchPreview} id="mailSubject" name="Subject Template" multiline={false} currentText={mailTemplate.subjectTemplate} setText={setMailSubjectTemplate}/>
+                    <br/>
+                    <br/>
                     <PreviewableTemplate preview={previews.mailPlain} previewAction={fetchPreview} id="mailPlain" name="Plain Template" multiline={true} currentText={mailTemplate.plainTemplate} setText={setMailPlainTemplate}/>
+                    <br/>
+                    <br/>
                     <PreviewableTemplate preview={previews.mailHtml} previewAction={fetchPreview} id="mailHtml" name="HTML Template" multiline={true} currentText={mailTemplate.htmlTemplate} setText={setMailHtmlTemplate}/>
                 </CollapsableTemplatePane>
                 <br/>

@@ -18,14 +18,14 @@ class PreviewableTemplate extends Component{
         return (
             <div style={{width:"100%",display:"block"}}>
                 <div style={{width:"100%",display:"inline-block"}}>
-                    <div style={{width:"45%",float:"left"}}>
+                    <div style={{width:"70%",float:"left"}}>
                         <p>{name}</p>
-                        <TextField value={currentText} multiline={multiline}
+                        <TextField value={currentText} multiline={multiline} style={{width:"100%"}}
                             onChange={e=>setText(e.target.value)}/>
                     </div>
-                    <div style={{width:"45%",float:"left"}}>
+                    <div style={{width:"30%",float:"left"}}>
                         <p>Preview <IconButton onClick={()=>previewAction(id,currentText)}><UpdatePreviewIcon/></IconButton></p>
-                        {preview}
+                        <div dangerouslySetInnerHTML={{__html:preview}}/>
                     </div>
                 </div>
             </div>
