@@ -56,7 +56,7 @@ const CarBrands = ({carBrands,input, classes, match, openDialog, closeDialog, de
                     (<CarBrandEditor/>),
                     <DialogActions><Button onClick={() => {
                         console.log(input);
-                    //insertCarBrand(input.brandCode,input.fullBrandName);
+                    insertCarBrand(input.brandCode,input.fullBrandName);
                 }} color="primary">Save</Button>
                     <Button onClick={() => {
                         closeDialog()

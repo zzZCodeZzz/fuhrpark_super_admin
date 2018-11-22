@@ -3448,7 +3448,7 @@ fsevents@^1.1.3, fsevents@^1.2.2:
 
 "fuhrparkjsrest@https://github.com/DanzCode/FuhrparkJSRest":
   version "0.1.1"
-  resolved "https://github.com/DanzCode/FuhrparkJSRest#afbd8c72fe2b7c6414048a0f24a73d482e16b58e"
+  resolved "https://github.com/DanzCode/FuhrparkJSRest#d057fcf07b0afbe06b7f112ca41eab5fc73ced0e"
   dependencies:
     axios axios/axios
 

@@ -46,7 +46,6 @@ new RestSessionBuilder(RestConfig.baseUrl)
     .onLogout(()=>history.push("/login"))
     .build();
 
-Session.login("manu","bla").then(res=>{console.log(res)}).catch(err=>{console.log(err)});
 
 function init() {
     render(store);

@@ -27,6 +27,6 @@ export const updateCarBrand = (carBrandId,newFullBrandName) => dispatch => {
 };
 
 export const insertCarBrand = (carBrandId,newFullBrandName) => dispatch => {
-    CarbrandService().create({brandCode:carBrandId,fullBrandName:newFullBrandName})
+    CarbrandService.create({brandCode:carBrandId,fullBrandName:newFullBrandName})
         .then((data) =>dispatch(setCarBrand(data)));
 };
