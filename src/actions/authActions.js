@@ -1,10 +1,6 @@
 /* eslint-disable import/named */
 import * as types from "./actionTypes";
-import apiCalls from "../rest2/ApiCalls";
-import history from "../history";
-import {OAuth2Data} from "../rest2/RestClient";
-import RestSession from "../rest2/RestSession";
-import {Session} from "fuhrparkjsrest/rest/RestSession";
+import {Session} from "@zz-dev/fuhrparkjsrest";
 
 
 export const token2Store = (data) => ({

@@ -1,7 +1,7 @@
 import * as types from "./actionTypes";
 import {createAction} from "redux-actions";
 import {NOTIFICATIONSETTING_SET_NOTIFICATIONSETTINGS} from "./actionTypes";
-import NoticationSettingService from "fuhrparkjsrest/service/admin/NotificationSettingService";
+import {NoticationSettingService} from "@zz-dev/fuhrparkjsrest";
 
 export const setNotificationSettingsAction=createAction(NOTIFICATIONSETTING_SET_NOTIFICATIONSETTINGS);
 

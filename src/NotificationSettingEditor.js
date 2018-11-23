@@ -5,7 +5,7 @@ import {withStyles} from "@material-ui/core";
 import {overviewStyles} from "./helpers/styleHelper";
 import CollapsableTemplatePane from "./CollapsableTemplatePane";
 import PreviewableTemplate from "./PreviewableTemplate";
-import NotificationSettingService from "fuhrparkjsrest/service/admin/NotificationSettingService";
+import {NotificationSettingService} from "@zz-dev/fuhrparkjsrest";
 import ExitEditorIcon from '@material-ui/icons/ExitToApp';
 import SaveIcon from '@material-ui/icons/Save';
 import IconButton from '@material-ui/core/IconButton';

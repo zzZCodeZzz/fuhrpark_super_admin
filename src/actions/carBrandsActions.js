@@ -1,6 +1,6 @@
 import {createAction} from "redux-actions";
 import * as types from './actionTypes';
-import CarbrandService from "fuhrparkjsrest/service/admin/CarbrandService";
+import {CarbrandService} from "@zz-dev/fuhrparkjsrest";
 
 export const setCarBrandEditorInput=createAction(types.CARBRAND_SET_EDITORINPUT);
 export const setCarBrands = createAction(types.CARBRAND_SET_CARBRANDS);

@@ -12,10 +12,7 @@ import {Provider} from "react-redux";
 import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import history from "./history";
-import RestSession from "./rest2/RestSession";
-import {RestSessionBuilder, Session} from "fuhrparkjsrest/rest/RestSession";
-import {LocalStorageTokenStore} from "fuhrparkjsrest/rest/TokenStore";
-import AuthAPI from "fuhrparkjsrest/rest/AuthAPI";
+import {RestSessionBuilder, Session,LocalStorageTokenStore,AuthAPI} from "@zz-dev/fuhrparkjsrest";
 import RestConfig from "./rest2/RestConfig";
 
 
