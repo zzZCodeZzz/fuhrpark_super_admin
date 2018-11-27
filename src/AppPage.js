@@ -13,6 +13,10 @@ import CarBrands from './CarBrands';
 import CarBrandComponent from "./CarBrandComponent";
 import {logoutACTION} from "./actions/authActions";
 import NotificationSettings from "./NotificationSettings";
+import {NotificationsTest} from "./NotificationsTest";
+import {TestButtons} from "./TestButtons";
+import {publishNotification} from "./actions/notificationActions";
+import {NotificationDistributor} from "@zz-dev/fuhrparkjsrest";
 
 const drawerWidth = 240;
 
@@ -52,6 +56,10 @@ class AppPage extends React.Component {
         };
     }
 
+    componentDidMount() {
+        NotificationDistributor.subscribe("manu",this.props.publishNotification);
+    }
+
     render() {
         const {classes, theme, match} = this.props;
         const {state} = this;
@@ -71,6 +79,8 @@ class AppPage extends React.Component {
                     <div className={classes.toolbar} />
                     <Route path={`/app/carBrands`} component={CarBrandComponent} />
                     <Route path={`/app/notificationSettings`} component={NotificationSettings} />
+                    <Route path={`/app/notificationtest`} component={NotificationsTest} />
+                    <Route path={`/app/requesttest`} component={TestButtons} />
                 </main>
 
             </div>
@@ -84,4 +94,4 @@ AppPage.propTypes = {
     logoutAction: PropTypes.func.isRequired,
     theme: PropTypes.object.isRequired
 };
-export default withStyles(styles, {withTheme: true})(connect(null, {logoutAction: logoutACTION})(AppPage));
+export default withStyles(styles, {withTheme: true})(connect(null, {logoutAction: logoutACTION,publishNotification})(AppPage));

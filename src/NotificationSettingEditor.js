@@ -50,7 +50,7 @@ class NotificationSettingEditor extends Component {
         const setMailPlainTemplate=text=>this.setState({mailTemplate:Object.assign({},mailTemplate,{plainTemplate: text})});
         const setMailHtmlTemplate=text=>this.setState({mailTemplate:Object.assign({},mailTemplate,{htmlTemplate: text})});
 
-        const fetchPreview=(id,previewText)=>(new NotificationSettingService().previewTemplate(notificationTypeSetting.typeIdentifier,previewText)
+        const fetchPreview=(id,previewText)=>(NotificationSettingService.previewTemplate(notificationTypeSetting.typeIdentifier,previewText)
             .then(preview=>{
                 let mod={};
                 mod[id]=preview;

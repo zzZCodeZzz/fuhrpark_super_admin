@@ -9,6 +9,10 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import {Link} from "react-router-dom";
 import history from "./history";
+import connect from "react-redux/es/connect/connect";
+import {requestNotificationSettings} from "./actions/notificatonSettingActions";
+import {getEditorInput} from "./reducers/carBrandReducer";
+import {getNotificationState} from "./reducers/notificationReducer";
 
 const styles = theme => ({
     grow: {flexGrow: 1,},
@@ -24,14 +28,21 @@ const styles = theme => ({
     }
 });
 
+const mapStateToProps = state => ({
+    notificationState: getNotificationState(state)
+});
+
 const TopBar = props => {
-    const {classes, logoutAction, appBar} = props;
+    const {classes, logoutAction, appBar,notificationState} = props;
+    console.log(notificationState);
     return (
         <AppBar position="absolute" className={appBar}>
             <Toolbar>
                 <Typography variant="title" color="inherit" className={classes.grow} onClick={() => history.push('/app')}>
                     Fuhrpark.io SUPER ADMIN
                 </Typography>
+                <span>{notificationState.amount}</span>
+                <span>{notificationState.lastNotification?notificationState.lastNotification.notificationText:""}</span>
                 <Button color="inherit" onClick={logoutAction}>Logout</Button>
             </Toolbar>
         </AppBar>
@@ -44,4 +55,4 @@ TopBar.propTypes = {
     appBar: PropTypes.string.isRequired
 };
 
-export default withStyles(styles, {withTheme: true})(TopBar);
+export default withStyles(styles, {withTheme: true})(connect(mapStateToProps,{})(TopBar));

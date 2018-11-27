@@ -35,7 +35,9 @@ class SelectedListItem extends React.Component {
         //const requestBrands=()=>console.log("car brands requested");
         const menuEntries = [
             {id: 'carBrands', label: 'Autohersteller', path: '/app/carBrands', icon: (<PermIdentityIcon />), action: requestCarBrands},
-            {id:'notificationSettings',label:'Notifications',path:'/app/notificationSettings',icon:(<PermIdentityIcon/>),action:null}
+            {id:'notificationSettings',label:'Notifications',path:'/app/notificationSettings',icon:(<PermIdentityIcon/>),action:null},
+            {id:'notificationstest',label:'Notifications Test',path:'/app/notificationtest',icon:(<PermIdentityIcon/>),action:null},
+            {id:'testbuttons',label:'Tests',path:'/app/requesttest',icon:(<PermIdentityIcon/>),action:null}
         ];
         return (
             <div className={classes.root}>
